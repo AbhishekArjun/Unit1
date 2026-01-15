@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +14,7 @@ class loginPage: AppCompatActivity() {
     lateinit var email: EditText
     lateinit var pass: EditText
     lateinit var login: Button
+    lateinit var forgot: TextView
     lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +24,8 @@ class loginPage: AppCompatActivity() {
         email = findViewById(R.id.etEmail)
         pass = findViewById(R.id.etPassword)
         login = findViewById(R.id.btnLogin)
+        forgot = findViewById(R.id.ForgotPassword)
+
         auth = FirebaseAuth.getInstance()
 
         login.setOnClickListener {

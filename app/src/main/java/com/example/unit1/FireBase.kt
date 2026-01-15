@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 class FireBase : AppCompatActivity() {
 
@@ -41,6 +42,8 @@ class FireBase : AppCompatActivity() {
 
             auth.createUserWithEmailAndPassword(email, pass)
                 .addOnCompleteListener { task ->
+
+
                     if (task.isSuccessful) {
                         sendVerificationEmail()
                     } else {
